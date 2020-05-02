@@ -1,7 +1,7 @@
 import Foundation
 
 extension String {
-  enum ValidTimePeriodType { case dayMonth, dayMonthYear }
+  public enum ValidTimePeriodType { case dayMonth, dayMonthYear }
   
   /// Checks if the format of a time period is "day.month - day.month"
   /// Does not check is dates exist in a calendar
@@ -11,7 +11,7 @@ extension String {
   /// * "1.1.2020 - 31.12.2020"
   /// - Throws: Invalid regex error
   /// - Returns: True if time period is valid else false
-  func isValidTimePeriod(_ type: ValidTimePeriodType = .dayMonth) -> Bool {
+  public func isValidTimePeriod(_ type: ValidTimePeriodType = .dayMonth) -> Bool {
     
     // Default to .dayMonth
     var pattern = #"[0-9]{1,2}\.[0-9]{1,2}\.? *- *[0-9]{1,2}\.[0-9]{1,2}\.?$"#
